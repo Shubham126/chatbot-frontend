@@ -202,7 +202,7 @@ var ChatFlowSDK = (function (exports) {
       this.apiKey = apiKey;
       // Auto-detect environment for baseUrl
       var isLocalhost = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1' || window.location.hostname.includes('127.0.0.1');
-      var defaultBaseUrl = isLocalhost ? 'http://localhost:3000/api/scrape' : 'https://chatflow-ai.onrender.com/api/scrape';
+      var defaultBaseUrl = isLocalhost ? 'http://localhost:3000/api/scrape' : 'https://chatbot-backend-srhg.onrender.com/api/scrape';
       this.baseUrl = options.baseUrl || defaultBaseUrl;
       this.isOpen = false;
       this.currentFileId = null;
