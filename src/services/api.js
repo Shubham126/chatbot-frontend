@@ -1,6 +1,9 @@
 import axios from 'axios';
 
-const API_BASE_URL = 'http://localhost:3000/api';
+const isLocalhost = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1';
+const API_BASE_URL = isLocalhost
+    ? 'http://localhost:3000/api'
+    : 'https://chatbot-backend-srhg.onrender.com/api';
 
 // Create axios instance
 const api = axios.create({
@@ -13,7 +16,8 @@ const api = axios.create({
 
 // ==================== HEALTH CHECK ====================
 export const checkHealth = async () => {
-    const response = await axios.get('http://localhost:3000/');
+    const baseUrl = isLocalhost ? 'http://localhost:3000' : 'https://chatbot-backend-srhg.onrender.com';
+    const response = await axios.get(`${baseUrl}/`);
     return response.data;
 };
 
